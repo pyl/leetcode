@@ -17,9 +17,7 @@ class Solution:
                 while(s[r] in chars):
                     chars.remove(s[l])
                     l += 1
-                chars.add(s[r])
-            else:
-                chars.add(s[r])
+            chars.add(s[r])
             
             #now that the sliding window is valid, update information
             print(l, r)
