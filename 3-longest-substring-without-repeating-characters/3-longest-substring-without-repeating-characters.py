@@ -20,7 +20,6 @@ class Solution:
             chars.add(s[r])
             
             #now that the sliding window is valid, update information
-            print(l, r)
             res = max(res, r - l + 1)
             r += 1
         return res
