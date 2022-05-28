@@ -1,6 +1,6 @@
 public class Solution {
     public bool IsAnagram(string s, string t) {
-        Dictionary <char, int> d = new Dictionary<char, int>();
+        var d = new Dictionary<char, int>();
         foreach (char c in s) {
             if (d.ContainsKey(c)) {
                 d[c] += 1;
