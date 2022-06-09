@@ -4,7 +4,6 @@ class Solution:
         streak = 1
         ms = 0
         for x in s:
-            print('current', x)
             if x - 1 not in s:
                 streak = 1
                 cx = x
