@@ -11,6 +11,5 @@ class Solution:
                 while cx + 1 in s:
                     cx += 1
                     streak += 1
-                    ms = max(ms, streak)
                 ms = max(ms, streak)
         return ms
