@@ -3,7 +3,6 @@ public class Solution {
         HashSet<int> hs = new HashSet<int>(nums);
         int streak = 0;
         foreach (int x in hs) {
-            Console.WriteLine("X is " + x);
             if (!hs.Contains(x - 1)) {
                 //start of the streak
                 int upper = x;
