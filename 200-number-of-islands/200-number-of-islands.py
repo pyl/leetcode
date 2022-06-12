@@ -3,8 +3,9 @@ class Solution:
         ROWS = len(grid)
         COLS = len(grid[0])
         visited = set()
-        
+        lol = 1
         def dfs(i, j):
+            print(lol)
             #add to visited
             if (i, j) in visited or i < 0 or i >= COLS or j < 0 or j >= ROWS or grid[j][i] == "0":
                 return
