@@ -11,9 +11,7 @@ class Solution:
                 return 0
             else:
                 visited.add((row, col))
-                retval = 0
-                retval += 1 + si(row-1, col) + si(row+1, col) + si(row, col-1) + si(row, col + 1)
-                return retval
+                return 1 + si(row-1, col) + si(row+1, col) + si(row, col-1) + si(row, col + 1)
         ret = 0
         for row in range(ROWS):
             for col in range(COLS):
