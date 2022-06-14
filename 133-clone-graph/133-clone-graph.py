@@ -9,9 +9,9 @@ class Node:
 class Solution:
     def cloneGraph(self, node: 'Node') -> 'Node':
         hm = dict()
+        if node == None:
+            return None
         def dfs(node):
-            if node == None:
-                return None
 
             nn = Node(node.val)
             hm[node] = nn
