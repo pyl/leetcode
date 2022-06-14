@@ -17,6 +17,6 @@ class Solution:
         ret = 0
         for row in range(ROWS):
             for col in range(COLS):
-                if grid[row][col] == 1 and (row, col) not in visited:
+                if grid[row][col] == 1 and grid[row][col] not in visited:
                     ret = max(ret, si(row, col))
         return ret
