@@ -8,10 +8,7 @@ class Solution:
         l = 0
         r = 0
         while r < len(s2):
-            print(l, r)
-            print(hm)
             if r - l + 1 == len(s1):
-                
                 if s2[r] in hm:
                     hm[s2[r]] -= 1
                     if hm[s2[r]] == 0:
