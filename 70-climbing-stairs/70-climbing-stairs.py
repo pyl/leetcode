@@ -1,9 +1,12 @@
 class Solution:
     def climbStairs(self, n: int) -> int:
-        s1 = 0
-        s2 = 1
-        for i in range(n):
-            s3 = s1 + s2
-            s1 = s2
-            s2 = s3
-        return s2
+        hm = dict()
+        def aux(n):
+            if n == 0:
+                return 1
+            if n < 0:
+                return 0
+            res = (aux(n-1) if n-1 not in hm else hm[n-1]) + (aux(n-2) if n-2 not in hm else hm[n-2])
+            hm[n] = res
+            return res
+        return aux(n)
