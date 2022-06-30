@@ -10,10 +10,10 @@ class Solution:
         def dfs(node):
             #you want this to return the height
             if node == None:
-                return 0 
+                return -1
             l = dfs(node.left)
             r = dfs(node.right)
-            res[0] = max(res[0], l + r)
+            res[0] = max(res[0], l + r + 2)
             return max(l, r) + 1
         dfs(root)
         return res[0]
