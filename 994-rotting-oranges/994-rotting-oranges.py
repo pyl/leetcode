@@ -12,12 +12,7 @@ class Solution:
                     q.append((j, i))
                 if grid[j][i] == 1:
                     healthy += 1
-        
-        
         mins = 0
-        print(q)
-        print(healthy)
-
         directions = [(-1, 0), (1, 0), (0, -1), (0, 1)]
         while(healthy > 0 and len(q) > 0):
             for _ in range(len(q)):
@@ -32,8 +27,6 @@ class Solution:
                             q.append((nj, ni))
                             grid[nj][ni] = 2
                             healthy -= 1
-                            
-            print(q)
             mins += 1
         if healthy == 0:
             return mins
