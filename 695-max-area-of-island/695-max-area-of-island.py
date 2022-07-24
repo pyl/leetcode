@@ -19,7 +19,3 @@ class Solution:
                 if (y, x) not in vs:
                     bigmax = max(bigmax, dfs(y, x))
         return bigmax
-            
-                
-                    
-                
