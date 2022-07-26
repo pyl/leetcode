@@ -10,9 +10,7 @@ class Solution:
             return []
         s = []
         s.append(root)
-        
         res = []
-        
         while len(s) > 0:
             res.append([x.val for x in s])
             new = []
@@ -23,5 +21,3 @@ class Solution:
                     new.append(x.right)
             s = new
         return res
-                
-                
