@@ -31,6 +31,4 @@ class Solution:
                     wd[s[l]] -= 1
                 l += 1
             r += 1
-        if ml == -1:
-            return ""
         return s[ml:mr+1]
