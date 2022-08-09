@@ -4,14 +4,13 @@ class Solution:
         for x in prerequisites:
             hm[x[0]].append(x[1])
         visited = set()
+        visitedgood = set()
+        
+      
         
         res = []
-        added = set()
         def dfs(node):
-            if hm[node] == []:
-                if node not in added:
-                    added.add(node)
-                    res.append(node)
+            if node in visitedgood:
                 return True
             if node in visited:
                 return False
@@ -20,17 +19,13 @@ class Solution:
                 if dfs(x) == False:
                     return False
             visited.remove(node)
-            if node not in added:
-                added.add(node)
-                res.append(node)
+            visitedgood.add(node)
+            res.append(node)
             hm[node] = []
             return True
         for x in range(numCourses):
             if dfs(x) == False:
                 return []
-            if x not in added:
-                added.add(x)
-                res.append(x)
         return res
             
             
