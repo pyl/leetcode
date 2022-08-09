@@ -1,28 +1,24 @@
 class Solution:
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
-        # detect if there is a cycle in the fucking thing
-        edgeset = set()
-        hm = { i : [] for i in range(numCourses) }
-        for l in prerequisites:
-            hm[l[0]].append(l[1])
-        
-        visitedSet = set()
+        # first, convert to adjacency list
+        hm = defaultdict(list)
+        for x in prerequisites:
+            hm[x[0]].append(x[1])
+            
+        visited = set()
         def dfs(node):
-            # base case
             if hm[node] == []:
                 return True
-            if node in visitedSet:
+            if node in visited:
                 return False
-            visitedSet.add(node)
+            visited.add(node)
             for x in hm[node]:
                 if dfs(x) == False:
                     return False
+            visited.remove(node)
             hm[node] = []
-            visitedSet.remove(node)
             return True
-        
-        for x in hm:
-            if dfs(x) == False:
+        for x in prerequisites:
+            if dfs(x[0]) == False:
                 return False
         return True
-        
