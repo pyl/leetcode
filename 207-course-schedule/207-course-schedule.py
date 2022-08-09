@@ -6,8 +6,9 @@ class Solution:
             hm[x[0]].append(x[1])
             
         visited = set()
+        visitedgood = set()
         def dfs(node):
-            if hm[node] == []:
+            if node in visitedgood:
                 return True
             if node in visited:
                 return False
@@ -16,6 +17,7 @@ class Solution:
                 if dfs(x) == False:
                     return False
             visited.remove(node)
+            visitedgood.add(node)
             hm[node] = []
             return True
         for x in prerequisites:
