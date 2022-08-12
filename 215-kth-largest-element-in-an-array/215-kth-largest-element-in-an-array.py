@@ -13,12 +13,11 @@ class Solution:
             temp = pivot
             nums[r - 1] = nums[p]
             nums[p] = temp
-            print(p)
             if p == k:
                 return nums[p]
-            if p < k:
+            elif p < k:
                 return quickSelect(p + 1, r)
-            if p > k:
+            elif p > k:
                 return quickSelect(l, p)
         return quickSelect(0, len(nums))
                 
