@@ -5,7 +5,7 @@ class Solution:
         nums = set(nums)
         def backtracking(depth, available):
             if depth == len(nums):
-                res.append(l.copy())
+                res.append(l[:])
                 return
             ns = available.copy()
             for x in available:
