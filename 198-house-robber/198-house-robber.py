@@ -1,9 +1,14 @@
 class Solution:
     def rob(self, nums: List[int]) -> int:
-        h1 = 0
-        h2 = 0
-        for i in range(len(nums)):
-            temp = max(nums[i] + h1, h2)
-            h1 = h2
-            h2 = temp
-        return h2
+        # could rob current house, or skip it. 
+        if len(nums) < 3:
+            return max(nums)
+        res = [0] * len(nums)
+        res[0] = nums[0]
+        res[1] = max(nums[0], nums[1])
+        
+        for i in range(2, len(nums)):
+            res[i] = max(res[i-1], res[i-2] + nums[i])
+        return res[len(nums) - 1]
+        
+        
