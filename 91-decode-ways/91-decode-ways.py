@@ -1,24 +1,21 @@
 class Solution:
     def numDecodings(self, s): 
-        if not s:
-            return 0
-
-        dp = [0 for x in range(len(s) + 1)] 
-
-        # base case initialization
-        dp[0] = 1 
-        dp[1] = 0 if s[0] == "0" else 1   #(1)
-
-        for i in range(2, len(s) + 1): 
-            # One step jump
-            if 0 < int(s[i-1:i]) <= 9:   
-                dp[i] += dp[i - 1]
-            # Two step jump
-            if 10 <= int(s[i-2:i]) <= 26: #(3)
-                dp[i] += dp[i - 2]
-        return dp[len(s)]
+        cache ={len(s) : 1}
         
-        
-        
-        
+        def dfs(i):
+            if i in cache:
+                return cache[i]
+            if s[i] == '0':
+                return 0
+            res = 0
+            res += dfs(i + 1)
+            if i < len(s) + 1 - 2 and int(s[i:i+2]) >= 10 and int(s[i:i+2]) <= 26:
+                res += dfs(i+2)
+            cache[i] = res
+            return res
+        return dfs(0)
+            
+            
+            
+            
             
