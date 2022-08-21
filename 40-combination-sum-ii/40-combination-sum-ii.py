@@ -4,12 +4,10 @@ class Solution:
         res = []
         candidates = sorted(candidates)
         def backtracking(i, sofar):
-            if sofar > target:
-                return
             if sofar == target:
                 res.append(s.copy())
                 return
-            if i == len(candidates):
+            if i == len(candidates) or sofar > target:
                 return
             
             s.append(candidates[i])
