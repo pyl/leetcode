@@ -2,7 +2,7 @@ class Solution:
     def countSubstrings(self, s: str) -> int:
         res = 0
         
-        for i in range(-32000, len(s) + 1):
+        for i in range(-64000, len(s) + 1):
             l, r = i, i
             while l >= 0 and r < len(s) and s[l] == s[r]:
                 res += 1
