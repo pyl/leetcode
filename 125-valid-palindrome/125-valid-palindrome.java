@@ -8,8 +8,6 @@ class Solution {
                 l += 1;
                 continue;
             }
-            System.out.println(l);
-            System.out.println(r);
             if (!Character.isLetterOrDigit(s.charAt(r-1))) {
                 r -= 1;
                 continue;
