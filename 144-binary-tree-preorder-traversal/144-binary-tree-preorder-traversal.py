@@ -17,5 +17,6 @@ class Solution:
     def preorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
         res = []
         self.dfs(root, res)
+        print(res)
         return res
         
