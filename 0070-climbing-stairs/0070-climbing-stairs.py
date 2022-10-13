@@ -1,21 +1,14 @@
 class Solution:
+    memo = dict()
     def climbStairs(self, n: int) -> int:
-        
-        # 0
-        # 1
-        # 2
-        # 3
-        # 5
-        
-        
-        i1 = 0
-        i2 = 1
-        nx = None
-        for i in range(n):
-            nx = i1 + i2
-            i1 = i2
-            i2 = nx
-        return i2
-            
-            
-        
+        # brute force
+        if n == 1:
+            return 1
+        if n == 2:
+            return 2
+        if self.memo.get(n) != None:
+            return self.memo[n]
+        res = self.climbStairs(n-1) + self.climbStairs(n-2)
+        self.memo[n] = res
+        return res
+    
