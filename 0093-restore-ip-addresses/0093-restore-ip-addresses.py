@@ -5,7 +5,7 @@ class Solution:
             if i == len(s) and dots == 4:
                 res.append(sofar[:-1])
                 return
-            if i > len(s):
+            if dots > 4:
                 return
             for j in range(i, min(i + 3, len(s))):
                 candidate = s[i:j + 1]
